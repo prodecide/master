@@ -1,0 +1,68 @@
+<div class="mentor-form-container">
+    <div class="form-card">
+      <h2 class="form-title">Join as a Mentor</h2>
+  
+      <form (ngSubmit)="onSubmit()" class="mentor-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="mentorForm.name"
+            required
+            placeholder="Enter your full name"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="mentorForm.email"
+            required
+            placeholder="Enter your email"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="expertise">Area of Expertise</label>
+          <input
+            type="text"
+            id="expertise"
+            name="expertise"
+            [(ngModel)]="mentorForm.expertise"
+            required
+            placeholder="e.g., Software Development, Marketing, Finance"
+          />
+        </div>
+  
+        <div class="form-group">
+          <label for="bio">Short Bio</label>
+          <textarea
+            id="bio"
+            name="bio"
+            [(ngModel)]="mentorForm.bio"
+            rows="4"
+            placeholder="Tell us about your experience"
+          ></textarea>
+        </div>
+  
+        <div class="form-actions">
+          <button type="submit" class="submit-button">
+            Submit Application
+          </button>
+          <button type="button" routerLink="/" class="cancel-button">
+            Back to Home
+          </button>
+        </div>
+      </form>
+  
+      <div *ngIf="formSubmitted" class="success-message">
+        <p>Thank you for your application, {{ mentorForm.name }}!</p>
+        <p>We'll review it and get back to you soon.</p>
+      </div>
+    </div>
+  </div>

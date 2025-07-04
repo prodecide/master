@@ -1,0 +1,34 @@
+<div class="home-container">
+  <!-- Angular Logo with Text Animation -->
+  <div class="angular-logo-container" (mouseenter)="logoHovered = true" (mouseleave)="logoHovered = false">
+    <div class="logo-wrapper">
+      <svg viewBox="0 0 300 300" class="angular-icon">
+        <path fill="#DD0031" d="M125 30L31.9 63.2l14.2 123.1L125 230l78.9-43.7 14.2-123.1z"/>
+        <path fill="#C3002F" d="M125 30v22.2-.1V230l78.9-43.7 14.2-123.1L125 30z"/>
+        <path fill="#FFFFFF" d="M125 52.1L66.8 182.6h21.7l11.7-29.2h49.4l11.7 29.2H183L125 52.1zm17 83.3h-34l17-40.9 17 40.9z"/>
+      </svg>
+      <span class="angular-text" [class.visible]="logoHovered">Angular</span>
+    </div>
+  </div>
+
+  <h1 class="app-title">
+    ProDecide
+  </h1>
+
+  <!-- Rest of your template remains the same -->
+  <p class="app-description">
+    Your personalized guide to a fulfilling career based on your unique skills and aspirations.
+  </p>
+
+  <div class="action-buttons">
+    <a routerLink="/decide" class="btn">
+      Decide My Career
+    </a>
+    <a routerLink="/mentors" class="btn">
+      Explore Mentors
+    </a>
+    <a routerLink="/join-mentor" class="btn">
+      Join as a Mentor
+    </a>
+  </div>
+</div>

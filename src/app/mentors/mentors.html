@@ -1,0 +1,25 @@
+<div class="mentors-container">
+    <div class="mentors-card">
+      <h2 class="mentors-title">Our Esteemed Mentors</h2>
+  
+      <div class="mentors-grid">
+        <div *ngFor="let mentor of mentors" class="mentor-card">
+          <img
+            [src]="mentor.imageUrl"
+            [alt]="mentor.name"
+            class="mentor-image"
+            onerror="this.onerror=null;this.src='https://placehold.co/112x112/EEEEEE/000000?text=Mentor';"
+          />
+          <h3 class="mentor-name">{{ mentor.name }}</h3>
+          <p class="mentor-expertise">{{ mentor.expertise }}</p>
+          <p class="mentor-bio">{{ mentor.bio }}</p>
+        </div>
+      </div>
+  
+      <div class="mentors-actions">
+        <button routerLink="/" class="home-button">
+          Back to Home
+        </button>
+      </div>
+    </div>
+  </div>

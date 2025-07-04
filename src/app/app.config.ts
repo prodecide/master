@@ -1,13 +1,22 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { provideRouter, Routes, withViewTransitions } from '@angular/router';
 
-import { routes } from './app.routes';
-import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { HomeComponent } from './home/home';
+import { DecideComponent } from './decide/decide';
+import { MentorsComponent } from './mentors/mentors';
+import { JoinMentorComponent } from './join-mentor/join-mentor';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'decide', component: DecideComponent },
+  { path: 'mentors', component: MentorsComponent },
+  { path: 'join-mentor', component: JoinMentorComponent },
+  { path: '**', redirectTo: '' }
+];
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection(),
-    provideRouter(routes), provideClientHydration(withEventReplay())
+    provideRouter(routes, withViewTransitions()),
+    provideZoneChangeDetection({ eventCoalescing: true }) // Add this
   ]
 };

@@ -1,0 +1,44 @@
+<div class="decide-container">
+    <div class="questionnaire-card">
+      <h2 class="questionnaire-title">Career Guidance Questionnaire</h2>
+  
+      <div class="questions-container">
+        <div *ngFor="let q of questions" class="question-card">
+          <p class="question-text">Q{{ q.id }}: {{ q.text }}</p>
+          <div class="options-container">
+            <label *ngFor="let option of q.options" class="option-label">
+              <input
+                type="radio"
+                [name]="'question-' + q.id"
+                [value]="option"
+                [(ngModel)]="q.selectedOption"
+                class="option-radio"
+                [disabled]="q.selectedOption !== null"
+              />
+              <span class="option-text">{{ option }}</span>
+            </label>
+          </div>
+          <div *ngIf="q.selectedOption" class="selection-display">
+            <p class="selection-text">Selected: <span class="selection-value">{{ q.selectedOption }}</span></p>
+          </div>
+        </div>
+      </div>
+  
+      <div *ngIf="allQuestionsAnswered" class="results-container">
+        <p class="results-title">Thank you for completing the questionnaire!</p>
+        <p class="results-text">
+          Based on your responses, we recommend exploring careers in <span class="highlight-text">Technology & Innovation</span>.
+        </p>
+        <button
+          routerLink="/"
+          class="home-button"
+        >
+          Back to Home
+        </button>
+      </div>
+  
+      <div *ngIf="!allQuestionsAnswered" class="prompt-message">
+        Please answer all questions to get your career recommendation.
+      </div>
+    </div>
+  </div>
