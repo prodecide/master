@@ -10,4 +10,5 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.css',
 })
 export class HomeComponent { 
+  logoHovered = false;
 }
