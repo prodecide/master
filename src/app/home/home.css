@@ -74,14 +74,8 @@
     align-items: center;
   }
   
-  @media (min-width: 640px) {
-    .action-buttons {
-      flex-direction: row;
-      gap: 1.5rem;
-    }
-  }
-  /* Add these styles to your existing CSS */
-.angular-logo-container {
+  /* Angular Logo */
+  .angular-logo-container {
     margin-bottom: 1.5rem;
     text-align: center;
   }
@@ -97,9 +91,206 @@
     filter: grayscale(0%);
   }
   
-  /* Adjust title margin to account for logo */
-  .app-title {
-    margin-top: 0; /* Remove default margin */
-    margin-bottom: 1.5rem; /* Adjusted from 2rem */
+  .logo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
   }
   
+  .angular-icon {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.3s ease;
+  }
+  
+  .angular-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #666;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .angular-text.visible {
+    opacity: 1;
+  }
+  
+  /* Adjust title margin to account for logo */
+  .app-title {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Mobile Responsive Design */
+  
+  /* Large tablets and small desktops */
+  @media screen and (max-width: 1024px) {
+    .home-container {
+      padding: 1.5rem;
+    }
+    
+    .app-title {
+      font-size: 3.5rem;
+    }
+    
+    .app-description {
+      font-size: 1.125rem;
+      max-width: 48rem;
+    }
+  }
+  
+  /* Tablets */
+  @media screen and (max-width: 768px) {
+    .home-container {
+      padding: 1rem;
+    }
+    
+    .app-title {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      padding: 0.5rem;
+    }
+    
+    .app-description {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      max-width: 40rem;
+      padding: 0 1rem;
+    }
+    
+    .angular-icon {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .btn {
+      padding: 0.875rem 1.75rem;
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Small tablets and large phones */
+  @media screen and (max-width: 640px) {
+    .action-buttons {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 300px;
+    }
+    
+    .btn {
+      width: 100%;
+      padding: 1rem 1.5rem;
+    }
+    
+    .app-title {
+      font-size: 2.5rem;
+    }
+    
+    .app-description {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+  
+  /* Mobile phones */
+  @media screen and (max-width: 480px) {
+    .home-container {
+      padding: 0.75rem;
+      min-height: 100vh;
+      justify-content: flex-start;
+      padding-top: 2rem;
+    }
+    
+    .angular-logo-container {
+      margin-bottom: 1rem;
+    }
+    
+    .angular-icon {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .app-title {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      padding: 0;
+      letter-spacing: -0.02em;
+    }
+    
+    .app-description {
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+      padding: 0 0.5rem;
+      max-width: 100%;
+    }
+    
+    .action-buttons {
+      gap: 0.75rem;
+      max-width: 280px;
+    }
+    
+    .btn {
+      padding: 0.875rem 1.25rem;
+      font-size: 0.9rem;
+      border-radius: 50px;
+    }
+    
+    .angular-text {
+      font-size: 0.75rem;
+    }
+  }
+  
+  /* Very small phones */
+  @media screen and (max-width: 360px) {
+    .home-container {
+      padding: 0.5rem;
+      padding-top: 1.5rem;
+    }
+    
+    .app-title {
+      font-size: 1.75rem;
+    }
+    
+    .app-description {
+      font-size: 0.8rem;
+      padding: 0 0.25rem;
+    }
+    
+    .action-buttons {
+      max-width: 260px;
+    }
+    
+    .btn {
+      padding: 0.75rem 1rem;
+      font-size: 0.85rem;
+    }
+    
+    .angular-icon {
+      width: 40px;
+      height: 40px;
+    }
+  }
+  
+  /* Touch device optimizations */
+  @media (hover: none) and (pointer: coarse) {
+    .btn:hover {
+      transform: none;
+      box-shadow: none;
+    }
+    
+    .btn:active {
+      transform: scale(0.98);
+      background-color: black;
+      color: white;
+    }
+    
+    .angular-logo:hover {
+      filter: grayscale(100%) brightness(40%);
+    }
+    
+    .angular-text.visible {
+      opacity: 1;
+    }
+  }
